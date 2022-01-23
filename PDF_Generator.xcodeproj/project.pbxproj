@@ -12,6 +12,8 @@
 		9100ACD9279DE04E0090E638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9100ACD8279DE04E0090E638 /* Assets.xcassets */; };
 		9100ACDC279DE04E0090E638 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9100ACDB279DE04E0090E638 /* Preview Assets.xcassets */; };
 		9100ACE4279DE1410090E638 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100ACE3279DE1410090E638 /* Extensions.swift */; };
+		9100ACE7279DEE470090E638 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100ACE6279DEE470090E638 /* SharedData.swift */; };
+		9100ACE9279DF1190090E638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100ACE8279DF1190090E638 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		9100ACD8279DE04E0090E638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9100ACDB279DE04E0090E638 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9100ACE3279DE1410090E638 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9100ACE6279DEE470090E638 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		9100ACE8279DF1190090E638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			children = (
 				9100ACD4279DE04D0090E638 /* PDF_GeneratorApp.swift */,
 				9100ACD6279DE04D0090E638 /* ContentView.swift */,
+				9100ACE8279DF1190090E638 /* MainView.swift */,
+				9100ACE5279DEDE70090E638 /* Model */,
 				9100ACE2279DE1330090E638 /* Helpers */,
 				9100ACD8279DE04E0090E638 /* Assets.xcassets */,
 				9100ACDA279DE04E0090E638 /* Preview Content */,
@@ -76,6 +82,14 @@
 				9100ACE3279DE1410090E638 /* Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9100ACE5279DEDE70090E638 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9100ACE6279DEE470090E638 /* SharedData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9100ACE7279DEE470090E638 /* SharedData.swift in Sources */,
 				9100ACD7279DE04D0090E638 /* ContentView.swift in Sources */,
 				9100ACE4279DE1410090E638 /* Extensions.swift in Sources */,
+				9100ACE9279DF1190090E638 /* MainView.swift in Sources */,
 				9100ACD5279DE04D0090E638 /* PDF_GeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -45,8 +45,10 @@ extension View {
         let pdfView = convertToScrollView {
             content()
         }
-        
+        pdfView.tag = 1009
         let size = pdfView.contentSize
+        // Removing Safe Area top value
+        pdfView.frame = CGRect(x: 0, y: getSafeArea().top, width: size.width, height: size.height)
         
         // MARK: Attach to Root View and render PDF
         getRootController().view.insertSubview(pdfView, at: 0)
@@ -69,6 +71,7 @@ extension View {
         // Removing the added View
         getRootController().view.subviews.forEach { view in
             if view.tag == 1009 {
+                print("Subview was removed.")
                 view.removeFromSuperview()
             }
         }
@@ -84,5 +87,13 @@ extension View {
         guard let root = screen.windows.first?.rootViewController else { return .init() }
         
         return root
+    }
+    
+    func getSafeArea() -> UIEdgeInsets {
+        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return .zero }
+        
+        guard let safeArea = screen.windows.first?.safeAreaInsets else { return .zero }
+        
+        return safeArea
     }
 }
