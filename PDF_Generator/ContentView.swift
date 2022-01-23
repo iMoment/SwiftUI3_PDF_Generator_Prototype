@@ -28,6 +28,7 @@ struct ContentView: View {
                 .frame(width: screen.width, height: 60)
             
             Button(action: {
+                print("Button was pressed.")
                 print(convertToScrollView(content: {
                     self
                 }).contentSize)

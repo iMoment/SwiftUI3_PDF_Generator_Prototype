@@ -28,11 +28,48 @@ extension View {
         ]
         scrollView.addSubview(hostingController)
         scrollView.addConstraints(constraints)
+        scrollView.layoutIfNeeded()
         
         return scrollView
     }
     
+    // MARK: Export to PDF
+    // Completion Handler will send status and URL
+    func exportToPDF<Content: View>(@ViewBuilder content: @escaping () -> Content, completion: @escaping (Bool, URL?) -> ()) {
+        
+        // MARK: Temporary URL
+        let documentDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+        let outputFileURL = documentDirectory?.appendingPathComponent("PDF_FILENAME\(UUID().uuidString).pdf")
+        
+        // MARK: PDF View
+        let pdfView = convertToScrollView {
+            content()
+        }
+        
+        let size = pdfView.contentSize
+        
+        // MARK: Attach to Root View and render PDF
+        getRootController().view.insertSubview(pdfView, at: 0)
+        
+        // MARK: Rendering PDF
+        let renderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        
+        do {
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     func screenBounds() -> CGRect {
         return UIScreen.main.bounds
+    }
+    
+    func getRootController() -> UIViewController {
+        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return .init() }
+        
+        guard let root = screen.windows.first?.rootViewController else { return .init() }
+        
+        return root
     }
 }
