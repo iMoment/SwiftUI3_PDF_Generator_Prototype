@@ -38,8 +38,8 @@ extension View {
     func exportToPDF<Content: View>(@ViewBuilder content: @escaping () -> Content, completion: @escaping (Bool, URL?) -> ()) {
         
         // MARK: Temporary URL
-        let documentDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
-        let outputFileURL = documentDirectory?.appendingPathComponent("PDF_FILENAME\(UUID().uuidString).pdf")
+        let documentDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let outputFileURL = documentDirectory.appendingPathComponent("PDF_FILENAME\(UUID().uuidString).pdf")
         
         // MARK: PDF View
         let pdfView = convertToScrollView {
@@ -55,9 +55,22 @@ extension View {
         let renderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
         do {
+            try renderer.writePDF(to: outputFileURL, withActions: { context in
+                context.beginPage()
+                pdfView.layer.render(in: context.cgContext)
+            })
             
+            completion(true, outputFileURL)
         } catch {
+            completion(false, nil)
             print(error.localizedDescription)
+        }
+        
+        // Removing the added View
+        getRootController().view.subviews.forEach { view in
+            if view.tag == 1009 {
+                view.removeFromSuperview()
+            }
         }
     }
     
