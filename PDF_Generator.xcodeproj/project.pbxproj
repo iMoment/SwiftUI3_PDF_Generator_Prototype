@@ -11,6 +11,7 @@
 		9100ACD7279DE04D0090E638 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100ACD6279DE04D0090E638 /* ContentView.swift */; };
 		9100ACD9279DE04E0090E638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9100ACD8279DE04E0090E638 /* Assets.xcassets */; };
 		9100ACDC279DE04E0090E638 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9100ACDB279DE04E0090E638 /* Preview Assets.xcassets */; };
+		9100ACE4279DE1410090E638 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100ACE3279DE1410090E638 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		9100ACD6279DE04D0090E638 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9100ACD8279DE04E0090E638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9100ACDB279DE04E0090E638 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9100ACE3279DE1410090E638 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				9100ACD4279DE04D0090E638 /* PDF_GeneratorApp.swift */,
 				9100ACD6279DE04D0090E638 /* ContentView.swift */,
+				9100ACE2279DE1330090E638 /* Helpers */,
 				9100ACD8279DE04E0090E638 /* Assets.xcassets */,
 				9100ACDA279DE04E0090E638 /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				9100ACDB279DE04E0090E638 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9100ACE2279DE1330090E638 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9100ACE3279DE1410090E638 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9100ACD7279DE04D0090E638 /* ContentView.swift in Sources */,
+				9100ACE4279DE1410090E638 /* Extensions.swift in Sources */,
 				9100ACD5279DE04D0090E638 /* PDF_GeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
